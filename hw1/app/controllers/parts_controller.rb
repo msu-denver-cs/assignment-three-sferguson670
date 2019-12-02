@@ -1,12 +1,13 @@
 class PartsController < ApplicationController
   before_action :set_part, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /parts
   # GET /parts.json
   def index
     @parts = Part.all
   end
-  
+
   def search
       @parts = Part.where("name like ?", "%#{params[:query]}%")
       render :index

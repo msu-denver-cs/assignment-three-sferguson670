@@ -1,16 +1,17 @@
 class MakesController < ApplicationController
   before_action :set_make, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /makes
   # GET /makes.json
   def index
     @makes = Make.all
   end
-  
+
   def search
       @makes = Make.where("name like?", "%#{params[:query]}%")
       render :index
-  end 
+  end
 
   # GET /makes/1
   # GET /makes/1.json
