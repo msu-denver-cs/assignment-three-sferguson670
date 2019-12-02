@@ -9,7 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+<%= link_to 'Cars', cars_path %>
+<%= link_to 'Makes', makes_path %>
+<%= link_to 'Parts', parts_path %>
+
+    <div class ='content'>
+      <%= yield %>
+    </div>
+
 </html>
