@@ -19,4 +19,8 @@ Rails.application.routes.draw do
 # search_parts GET /parts/search(.:format) parts#search
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+# default route
+root to: 'cars#index'
+
 end
